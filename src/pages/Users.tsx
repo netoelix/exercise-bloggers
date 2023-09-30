@@ -1,8 +1,8 @@
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import User from '../components/User';
 import { users } from '../data';
 import '../styles/Users.css';
-import { Link } from 'react-router-dom';
 
 export default function Users() {
   return (
@@ -13,7 +13,7 @@ export default function Users() {
         {users.map((user) => (
           <>
             <User key={ user.id } userData={ user } />
-            <Link to={ `/posts/${user.id}` }>
+            <Link to={ `/posts/${user.id}` } state={ user.id }>
               Posts
             </Link>
           </>
